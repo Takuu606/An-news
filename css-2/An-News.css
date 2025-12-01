@@ -396,23 +396,68 @@ li a:hover {
     .navibar {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start; /* Để logo "treo" từ trên xuống */
         padding: 0 20px;
-        background-color: rgba(218, 216, 206, 0.95);
+        background-color: transparent; /* QUAN TRỌNG: Làm thanh bar trong suốt */
+        height: auto;
+        padding-top: 0;
     }
 
+    /* 1. LOGO: Hình cái tag treo xuống */
     .logo {
         position: static;
+        width: 80px; /* Kích thước logo */
+        background-color: #DAD8CE; /* Nền màu be */
+        border-radius: 0 0 40px 40px; /* Bo tròn 2 góc dưới */
+        padding: 10px 5px 15px 5px; /* Căn chỉnh ảnh bên trong */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Bóng đổ nhẹ cho nổi */
         margin: 0;
-        width: 80px;
+        display: flex;
+        justify-content: center;
+        z-index: 30;
     }
 
+    /* 2. MENU GIỮA: Nền đen mờ */
+    .menu {
+        display: flex;
+        gap: 15px;
+        background-color: rgba(0, 0, 0, 0.5); /* Nền đen mờ giống ảnh */
+        border-radius: 30px; /* Bo tròn viên thuốc */
+        padding: 8px 20px;
+        margin-top: 25px; /* Đẩy xuống ngang tầm mắt */
+        border: none;
+        box-shadow: none;
+        height: auto;
+        white-space: nowrap;
+    }
+
+    .menu-title {
+        font-size: 14px;
+        color: #DAD8CE; /* Chữ màu sáng nổi trên nền đen */
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    /* 3. WIDGET PHẢI: Nền be giống logo */
     .widget {
         position: static;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background-color: #DAD8CE; /* Nền màu be */
+        border-radius: 30px; /* Bo tròn viên thuốc */
+        padding: 8px 20px;
         margin: 0;
+        margin-top: 25px; /* Đẩy xuống ngang hàng với menu */
+        height: auto;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    .menu {
-        display: none;
+    .widget svg, 
+    .icon-one, .icon-two, .icon-three {
+        width: 20px;
+        height: 20px;
+        stroke: #3B5B41; 
     }
 
     .title p {
@@ -468,6 +513,12 @@ li a:hover {
         gap: 30px;
     }
 
+    .footer-wrapper {
+        width: 100%;
+        flex-direction: column;
+        gap: 30px;
+    }
+
     .f-content {
         width: 100%;
         text-align: center;
@@ -476,7 +527,7 @@ li a:hover {
 
     .f-img {
         width: 100%;
-        text-align: center;
+        justify-content: center;
         margin: 0;
     }
 
